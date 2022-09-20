@@ -1,3 +1,11 @@
+function backgroundImage(url, left, bottom, width, height) {
+  for (let w = 0; w < width; w++) {
+    for (let h = 0; h < height; h++) {
+      newImage(url, left + w * 100, bottom + h * 100);
+    }
+  }
+}
+
 function newImage(url, left, bottom) {
   let imageInput = document.createElement("img");
   imageInput.src = url;
@@ -15,6 +23,25 @@ function newItem(url, left, bottom) {
     imageInput.remove();
   });
 }
+
+let horizon = window.innerHeight / 1.45;
+let heightOfGrass = horizon;
+let heightOfSky = window.innerHeight - horizon;
+
+backgroundImage(
+  "assets/grass.png",
+  0,
+  0,
+  window.innerWidth / 100,
+  heightOfGrass / 100
+);
+backgroundImage(
+  "assets/sky.png",
+  0,
+  horizon,
+  window.innerWidth / 100,
+  heightOfSky / 100
+);
 
 newImage("assets/green-character.gif", 100, 100);
 newImage("assets/pine-tree.png", 450, 200);
