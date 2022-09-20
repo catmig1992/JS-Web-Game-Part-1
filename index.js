@@ -11,7 +11,7 @@ function newImage(url, left, bottom) {
 function newItem(url, left, bottom) {
   let imageInput = newImage(url, left, bottom);
 
-  imageInput.addEventListener("click", function () {
+  imageInput.addEventListener("dblclick", function () {
     imageInput.remove();
   });
 }
